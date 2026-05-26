@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚔️ Owner Store | Catálogo Oficial ⚔️</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0b0e14; color: #ffffff; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        
+        header { text-align: center; margin-bottom: 40px; margin-top: 20px; }
+        header h1 { font-size: 2.5rem; color: #00ffcc; text-shadow: 0 0 10px #00ffcc; letter-spacing: 2px; }
+        header p { color: #8a99ad; margin-top: 10px; font-size: 1.1rem; }
+
+        .container { width: 100%; max-width: 1000px; display: flex; flex-direction: column; gap: 30px; }
+        
+        .section-title { font-size: 1.5rem; color: #ff0055; text-shadow: 0 0 8px #ff0055; border-left: 4px solid #ff0055; padding-left: 10px; margin-bottom: 15px; }
+        
+        .grid-pagos { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .pago-card { background: #161c24; border: 1px solid #222c3a; border-radius: 10px; padding: 15px; text-align: center; transition: all 0.3s ease; }
+        .pago-card:hover { border-color: #00ffcc; box-shadow: 0 0 10px rgba(0, 255, 204, 0.2); transform: translateY(-3px); }
+        .pago-card .emoji { font-size: 2rem; margin-bottom: 8px; display: block; }
+        .pago-card .name { font-size: 0.9rem; font-weight: bold; color: #e1e7ed; }
+
+        .grid-productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .producto-card { background: #161c24; border: 1px solid #222c3a; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+        .producto-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #00ffcc; }
+        .producto-card h3 { font-size: 1.3rem; color: #ffffff; margin-bottom: 10px; }
+        .producto-card p { color: #8a99ad; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.4; }
+        
+        .precio-zona { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .precio { font-size: 1.4rem; font-weight: bold; color: #00ffcc; }
+        
+        .btn-comprar { background: transparent; border: 2px solid #ff0055; color: #ff0055; padding: 8px 18px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; text-shadow: 0 0 5px rgba(255, 0, 85, 0.3); }
+        .btn-comprar:hover { background: #ff0055; color: #ffffff; box-shadow: 0 0 15px #ff0055; }
+
+        footer { margin-top: 60px; text-align: center; color: #4f5d73; font-size: 0.85rem; padding-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>⚔️ OWNER CENTRAL STORE ⚔️</h1>
+        <p>Catálogo exclusivo gestionado directamente por Sebastián.</p>
+    </header>
+
+    <div class="container">
+        
+        <div>
+            <h2 class="section-title">💳 Métodos de Pago Soportados</h2>
+            <div class="grid-pagos">
+                <div class="pago-card"><span class="emoji">🔵</span><span class="name">PayPal</span></div>
+                <div class="pago-card"><span class="emoji">🏦</span><span class="name">BBVA / Soles</span></div>
+                <div class="pago-card"><span class="emoji">🇻🇪</span><span class="name">Bolívares / Ref</span></div>
+                <div class="pago-card"><span class="emoji">💵</span><span class="name">Dólares (USD)</span></div>
+                <div class="pago-card"><span class="emoji">🪙</span><span class="name">Robux</span></div>
+                <div class="pago-card"><span class="emoji">👑</span><span class="name">Roblox Limiteds</span></div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="section-title">📦 Servicios & Activos Disponibles</h2>
+            <div class="grid-productos">
+                
+                <div class="producto-card">
+                    <h3>⚙️ Diseño de Servidor Discord Pro</h3>
+                    <p>Configuración completa de canales estéticos, roles automatizados, sistemas anti-raid y bots avanzados a tu gusto.</p>
+                    <div class="precio-zona">
+                        <span class="precio">Consultar</span>
+                        <button class="btn-comprar" onclick="ordenar('Diseño de Servidor Discord')">Adquirir</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <h3>🪙 Paquetes de Robux Limpios</h3>
+                    <p>Transferencia segura de Robux directo a tu cuenta mediante método de juego o grupo sin riesgos.</p>
+                    <div class="precio-zona">
+                        <span class="precio">Stock Activo</span>
+                        <button class="btn-comprar" onclick="ordenar('Paquete de Robux')">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <h3>🎭 Cuentas & Limiteds de Roblox</h3>
+                    <p>Venta e intercambio de cuentas con antigüedad, ropa exclusiva y accesorios Limited listos para tradeo.</p>
+                    <div class="precio-zona">
+                        <span class="precio">Ver Catálogo</span>
+                        <button class="btn-comprar" onclick="ordenar('Roblox Limiteds / Cuentas')">Negociar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Owner Store. Todos los derechos reservados. Contacto directo con el propietario.</p>
+    </footer>
+
+    <script>
+        function ordenar(producto) {
+            // Cuando alguien le dé clic, abrirá tu chat de Discord con la orden lista
+            const mensaje = encodeURIComponent(`¡Hola Sebastián! Estoy interesado en adquirir: *${producto}* visto en tu tienda web.`);
+            window.open(`https://discord.com/users/1508813364279902328`, '_blank');
+        }
+    </script>
+</body>
+</html>
+
