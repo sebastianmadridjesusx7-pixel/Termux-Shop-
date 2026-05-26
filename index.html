@@ -6,11 +6,11 @@
     <title>OWNER CENTRAL STORE - Catálogo Profesional</title>
     <style>
         :root {
-            --primary-bg: #0b061a;
-            --accent-cyan: #0fffd1;
-            --accent-pink: #bf55ec;
-            --accent-purple: #7b1fa2;
-            --glass-bg: rgba(255, 255, 255, 0.04);
+            --primary-bg: #0b061a; /* Oscuro galáctico base */
+            --accent-cyan: #0fffd1; /* Cian neón para títulos */
+            --accent-pink: #bf55ec; /* Rosa/Morado para botones */
+            --accent-purple: #7b1fa2; /* Morado galáctico accent */
+            --glass-bg: rgba(255, 255, 255, 0.04); /* Cristal glaseado para tarjetas */
             --text-color: #ffffff;
             --text-muted: #b3b3cc;
         }
@@ -19,7 +19,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--primary-bg);
             background-image: linear-gradient(135deg, rgba(11, 6, 26, 0.95) 0%, rgba(45, 10, 80, 0.85) 100%), 
-                              url('https://images.unsplash.com/photo-1543722530-d2c3201371e7?q=80&w=1080&auto=format&fit=crop');
+                              url('https://images.unsplash.com/photo-1543722530-d2c3201371e7?q=80&w=1080&auto=format&fit=crop'); /* Fondo galaxia morada */
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -32,6 +32,7 @@
             min-height: 100vh;
         }
 
+        /* --- Encabezado --- */
         header {
             text-align: center;
             margin-bottom: 40px;
@@ -59,6 +60,7 @@
             letter-spacing: 1px;
         }
 
+        /* --- Catálogo --- */
         section {
             width: 100%;
             max-width: 500px;
@@ -91,6 +93,7 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
             position: relative;
             transition: transform 0.3s ease;
+            overflow: hidden; /* Para que la insignia no se salga */
         }
 
         .card:hover {
@@ -139,7 +142,7 @@
             transform: scale(1.03);
         }
 
-        /* Coming Soon Pro */
+        /* Coming Soon Reparado */
         .card.coming-soon {
             border: 1px dashed rgba(255, 255, 255, 0.15);
             background: rgba(20, 15, 35, 0.4);
@@ -147,28 +150,28 @@
 
         .card.coming-soon .card-header h2,
         .card.coming-soon .card-body p {
-            opacity: 0.5;
+            opacity: 0.5; /* Oscurece el texto */
         }
 
         .coming-soon-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(45deg, var(--accent-purple), #9c27b0);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            display: block; /* Ocupa su propia línea */
+            margin-top: 10px; /* Separación del título */
+            background: rgba(123, 31, 162, 0.3); /* Morado galáctico suave */
+            color: var(--accent-cyan); /* Texto cian */
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(15, 255, 209, 0.3); /* Borde cian suave */
+            font-size: 0.8rem;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 10px rgba(156, 39, 176, 0.5);
+            letter-spacing: 1.5px;
+            text-align: center;
         }
 
-        /* Grid de Pagos */
+        /* Grid de Pagos Reparado */
         .payment-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; /* Columna única para móvil */
             gap: 12px;
         }
 
@@ -182,10 +185,12 @@
             gap: 15px;
         }
 
-        .payment-item img {
-            width: 24px;
-            height: 24px;
-            object-fit: contain;
+        .payment-item .icon {
+            font-size: 1.5rem; /* Tamaño del emoji icon */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
         }
 
         .payment-item .info {
@@ -206,6 +211,7 @@
             letter-spacing: 0.5px;
         }
 
+        /* --- Footer --- */
         footer {
             margin-top: 40px;
             text-align: center;
@@ -241,23 +247,22 @@
             </div>
 
             <div class="card coming-soon">
-                <span class="coming-soon-badge">Coming Soon</span>
                 <div class="card-header">
-                    <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-roblox-a-multiplayer-online-and-game-creation-system-platform-logo-color-tal-revivo.png" alt="Robux">
-                    <h2>Paquetes de Robux Limpios</h2>
+                    🎮 <h2>Paquetes de Robux Limpios</h2>
                 </div>
                 <div class="card-body">
                     <p>Carga segura de Robux mediante fondos de grupo o método de pase de juego sin riesgos para tu cuenta de Roblox.</p>
+                    <span class="coming-soon-badge">Próximamente Disponible</span>
                 </div>
             </div>
 
             <div class="card coming-soon">
-                <span class="coming-soon-badge">Coming Soon</span>
                 <div class="card-header">
                     👑 <h2>Cuentas & Limiteds Raros</h2>
                 </div>
                 <div class="card-body">
                     <p>Adquisición de ítems limitados coleccionables y cuentas con antigüedad exclusivas listas para el sistema de tradeo.</p>
+                    <span class="coming-soon-badge">Próximamente Disponible</span>
                 </div>
             </div>
 
@@ -269,34 +274,34 @@
         <div class="payment-grid">
 
             <div class="payment-item">
-                <img src="https://img.icons8.com/color/48/banco-mercantil.png" alt="Mercantil">
+                <div class="icon">🇻🇪</div>
                 <div class="info">
                     <span class="bank-name">Pago Móvil / Banco Mercantil</span>
-                    <span class="country">Venezuela 🇻🇪</span>
+                    <span class="country">Venezuela</span>
                 </div>
             </div>
 
             <div class="payment-item">
-                <img src="https://img.icons8.com/color/48/bank-building.png" alt="BCP">
+                <div class="icon">🇵🇪</div>
                 <div class="info">
                     <span class="bank-name">Banco BCP / Yape</span>
-                    <span class="country">Perú 🇵🇪</span>
+                    <span class="country">Perú</span>
                 </div>
             </div>
 
             <div class="payment-item">
-                <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal">
+                <div class="icon">🌐</div>
                 <div class="info">
                     <span class="bank-name">PayPal (Saldo Internacional)</span>
-                    <span class="country">Global 🌐</span>
+                    <span class="country">Global</span>
                 </div>
             </div>
 
             <div class="payment-item">
-                <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-roblox-a-multiplayer-online-and-game-creation-system-platform-logo-color-tal-revivo.png" alt="Roblox Trade">
+                <div class="icon">🎮</div>
                 <div class="info">
                     <span class="bank-name">Método de Pago con Limiteds o Robux</span>
-                    <span class="country">Roblox 🎮</span>
+                    <span class="country">Roblox</span>
                 </div>
             </div>
 
@@ -304,7 +309,7 @@
     </section>
 
     <footer>
-        &copy; 2026 OWNER CENTRAL STORE • Desarrollado por Sebastián
+        &copy; 2026 OWNER CENTRAL STORE • Desarrollado por Drizzy
     </footer>
 
 </body>
